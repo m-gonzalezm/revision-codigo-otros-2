@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es"> <!-- Se cambió el lenguaje de la página -->
 
 <head>
   <meta charset="UTF-8">
@@ -8,33 +8,43 @@
   <link rel="stylesheet" type="text/css" media="screen" href="./styles.css">
   <title>Formulario</title>
 </head>
+
 <body>
-  <h1>Bienvenidos a mi fiesta</h1>
-  <h2>Por favor, confirmar asistencia:</h2>
+  
+  <main>
+    <h1>Bienvenidos a mi fiesta</h1>
+    <fieldset>
+      <legend><h2>Por favor, confirmar asistencia:</h2></legend>
+      <form class="formulario">
+        <label for="name">Nombre</label> <!-- Se agregó un label a nombre para conectarlo con su input -->
+        <input type="text" name="name" id="name">
+        <br />
+        <label for="age">Edad</label> <!-- Se agregó un label a edad para conectarla con su input -->
+        <input type="number" name="age" id="age">
+        <br />
+        <label for="nationality">Nacionalidad</label> <!-- Se agregó un label a nacionalidad para conectarla con su input -->
+        <select name="nationality" id="nationality">
+          <option value="arg">Argentina</option>
+          <option value="mex">Mexicana</option>
+          <option value="per">Peruana</option>
+          <option value="vzl">Venezolana</option>
+          <!-- Se modificaron los valores a tres caracteres para ser más consistentes, cuestión de gustos -->
+        </select>
+        <br />
+        <input type="submit">
+      </form>
+    </fieldset>
+    <section>
+      <h2>Lista de invitados</h2>
+      <div id="lista-de-invitados"></div> <!-- Se agregó un div con el id lista-de-invitados para renderizar la lista de invitados -->
+    </section>
+  </main>
+  <!-- 
+    Se agregaron etiquetas semánticas para mejorar su estructura
+    Se recomienda ocupar fieldset y legend para formularios
+   -->
 
-  <form class="formulario">
-    Nombre <input type="text" name="name" id="name">
-    <br />
-    Edad <input type="number" name="age" id="age">
-    <br />
-
-    Nacionalidad
-    <select name="nationality" id="nationality">
-      <option value="ar">Argentina</option>
-      <option value="mx">Mexicana</option>
-      <option value="per">Peruana</option>
-      <option value="vnzl">Venezolana</option>
-    </select>
-    <br />
-    <input type="submit">
-  </form>
-
-  <div>
-    <h2>Lista de invitados</h2>
-
-  </div>
-
-  <script src="../formulario.js"></script>
+  <script src="./formulario.js"></script> <!-- Se corrigió la ruta de acceso al script -->
 </body>
 
 </html>
